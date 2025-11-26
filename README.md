@@ -16,8 +16,4 @@ proyecto de apirest para divulgacion educativa .
 **Frontend:** bootstrap, EJS  
 **DevOps:** Docker, GitHub Actions
 
-## 🚀 Comenzar
-```bash
-git clone [url]
-npm install
-npm run dev
+
