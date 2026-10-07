@@ -41,6 +41,18 @@ Barra inferior con 4 pestañas:
 7. **Eventos**: calendario de eventos con inscripción.
 8. **Librerías**: documentos y manuales de la empresa.
 
+### Funciones extra (según la descripción oficial de la tienda)
+- **Notificaciones push segmentadas**: enviar a toda la empresa o solo a un área, sede o cargo.
+- **Perfiles con intereses**: descubrir compañeros con intereses similares.
+- **Revista digital**: noticias institucionales con formato de revista.
+- **Llamadas** de voz/video además del chat.
+- **Canales de consulta**: canales personalizados (ej. "Nómina", "Bienestar") para preguntar a un área.
+- **Aprobación de formularios**: flujo de aprobación, no solo envío.
+- **Reconocimientos**: dar "kudos" asociados a los valores de la empresa.
+- **Entrenamientos**: cursos cortos con progreso.
+- **Onboarding**: ruta de bienvenida para nuevos empleados.
+- **Clima organizacional**: encuestas rápidas de pulso (😃 😐 😞) con resultados para RRHH.
+
 ## 3. Panel web de administración (RRHH)
 - Cargar empleados (Excel/CSV), áreas y cargos.
 - Publicar en el muro, fijar publicaciones.
@@ -60,7 +72,8 @@ Barra inferior con 4 pestañas:
 ```
 empresas(id, nombre, logo_url, color_primario)
 empleados(id, empresa_id, nombre, documento, cargo, area, jefe_id, avatar_url, fecha_nacimiento)
-publicaciones(id, empresa_id, autor_id, tipo[muro|noticia], texto, media_url, fijada, creada_en)
+segmentos(id, empresa_id, nombre, filtro_json)          -- área, sede, cargo
+publicaciones(id, empresa_id, autor_id, tipo[muro|noticia], texto, media_url, fijada, segmento_id, creada_en)
 reacciones(publicacion_id, empleado_id, emoji)
 comentarios(id, publicacion_id, empleado_id, texto, creado_en)
 chats(id, empresa_id, es_grupo, nombre)
@@ -85,7 +98,8 @@ eventos(id, empresa_id, titulo, fecha, lugar)
 | 6 | Chat en tiempo real | 2 sem |
 | 7 | Panel admin web + pruebas piloto + publicación en tiendas | 3 sem |
 
-Desempeño, Portal de servicios, Eventos y Librerías quedan para una versión 2.
+**Versión 2:** Reconocimientos, Clima organizacional, Canales de consulta, Revista digital, Eventos y Librerías.
+**Versión 3:** Llamadas, Entrenamientos, Onboarding, Desempeño y Portal de servicios.
 
 ## 7. Mejoras de UX para diferenciarse
 - Modo sin conexión: guardar formularios y enviarlos al recuperar señal (trabajadores de campo).
